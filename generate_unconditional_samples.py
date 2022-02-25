@@ -148,16 +148,10 @@ def random_text(
         ckpt = tf.train.latest_checkpoint(os.path.join(models_dir, model_name))
         saver.restore(sess, ckpt)
 
-        # generated = 0
-        # while nsamples == 0 or generated < nsamples:
         out = sess.run(output)
-            # for i in range(batch_size):
-                # generated += batch_size
         text = enc.decode(out[0])
         print("=" * 40 + " SAMPLE " + " " + "=" * 40)
         print(text)
         return text
         quit()
-# if __name__ == '__main__':
-#     fire.Fire(sample_model)
 
