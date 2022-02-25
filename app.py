@@ -25,7 +25,7 @@ def text():
   return {
       'text': output
   }
-##### Make a prediction from the passed JSON data and return the predicted Bank Note with the confidence
+
 @app.post('/text')
 def text_generate(input_text):
         print(input_text, "input")
@@ -35,10 +35,5 @@ def text_generate(input_text):
         }
         
 
-##### Run the API with uvicorn
-if __name__ == '__main__':
-    print('Initiated')
-    ngrok_tunnel = ngrok.connect(8000)
-    print('Public URL:', ngrok_tunnel.public_url)
-    nest_asyncio.apply()
-    uvicorn.run(app, port=8000)
+##### Run the following line in the terminal
+# uvicorn app:app --reload
